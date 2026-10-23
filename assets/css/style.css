@@ -368,3 +368,10 @@ main { padding: 0 var(--gutter); }
   .hero__helix, .hero__scroll, .hero__actions, .contact__actions, .copy, .toast { display: none; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- Contenuti da CV ---------- */
+.timeline__item .list,
+.timeline__text { margin-top: 14px; color: var(--ink-soft); }
+.timeline__item .list li + li { margin-top: 6px; }
+.card--wide { grid-column: 1 / -1; }
+.card__note { margin-top: 6px; font-size: 14px; }
