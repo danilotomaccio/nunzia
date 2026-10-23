@@ -28,7 +28,9 @@ sull'URL pubblico finale.
 
 ## Da completare
 
-Cerca `TODO` in `index.html`: foto, tagline, testo del profilo, dettagli
-Erasmus, anni e tesi della magistrale, tecniche di laboratorio, telefono/CV,
-immagine Open Graph. I blocchi in corsivo tratteggiato (`.placeholder`) sono
-segnaposto da sostituire.
+- Foto (sostituisce il monogramma "NR" nella hero): vedi `TODO` in `index.html`.
+- Immagine Open Graph per l'anteprima quando il link viene condiviso.
+
+I contenuti vengono dal CV. Restano fuori di proposito i dati personali
+(data e luogo di nascita, indirizzo di casa), le esperienze non attinenti
+e la sezione conferenze e seminari.
