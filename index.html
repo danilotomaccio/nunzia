@@ -15,6 +15,21 @@
   <meta property="og:locale" content="it_IT">
   <!-- TODO: <meta property="og:image" content="https://.../assets/img/og.jpg"> -->
 
+  <link rel="alternate" hreflang="it" href="https://nunziarubino.me/">
+  <link rel="alternate" hreflang="en" href="https://nunziarubino.me/en/">
+  <link rel="alternate" hreflang="x-default" href="https://nunziarubino.me/">
+  <script>
+    // Chi apre la pagina con il telefono in un'altra lingua va alla versione inglese,
+    // a meno che non abbia già scelto la lingua col selettore.
+    (function () {
+      var choice = null;
+      try { choice = localStorage.getItem("lang"); } catch (e) {}
+      var langs = navigator.languages || [navigator.language || ""];
+      var italian = langs.some(function (l) { return /^it\b/i.test(l); });
+      if (choice === "en" || (!choice && !italian)) location.replace("en/" + location.hash);
+    })();
+  </script>
+
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +42,10 @@
   <!-- ========== HERO ========== -->
   <header class="hero" id="top">
     <canvas class="hero__helix" aria-hidden="true"></canvas>
+    <nav class="lang-switch" aria-label="Lingua">
+      <a href="./" aria-current="page" lang="it" data-lang="it">IT</a>
+      <a href="en/" lang="en" hreflang="en" data-lang="en">EN</a>
+    </nav>
     <div class="hero__inner">
       <div class="avatar" aria-hidden="true">
         <!-- TODO: sostituire con <img src="assets/img/nunzia.jpg" alt=""> -->

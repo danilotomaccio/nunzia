@@ -24,6 +24,19 @@
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
+  /* ---------- Testi in base alla lingua della pagina ---------- */
+  const en = document.documentElement.lang === "en";
+  const t = en
+    ? { copied: "Copied to clipboard", linkCopied: "Link copied" }
+    : { copied: "Copiato negli appunti", linkCopied: "Link copiato" };
+
+  /* ---------- Lingua: ricorda la scelta fatta col selettore ---------- */
+  document.querySelectorAll("[data-lang]").forEach((link) => {
+    link.addEventListener("click", () => {
+      try { localStorage.setItem("lang", link.dataset.lang); } catch { /* storage non disponibile */ }
+    });
+  });
+
   /* ---------- Toast ---------- */
   const toastEl = document.querySelector(".toast");
   let toastTimer;
@@ -40,7 +53,7 @@
     btn.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(btn.dataset.copy);
-        toast("Copiato negli appunti");
+        toast(t.copied);
       } catch {
         toast(btn.dataset.copy);
       }
@@ -58,7 +71,7 @@
       }
       try {
         await navigator.clipboard.writeText(location.href);
-        toast("Link copiato");
+        toast(t.linkCopied);
       } catch {
         toast(location.href);
       }
