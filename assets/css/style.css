@@ -375,3 +375,21 @@ main { padding: 0 var(--gutter); }
 .timeline__item .list li + li { margin-top: 6px; }
 .card--wide { grid-column: 1 / -1; }
 .card__note { margin-top: 6px; font-size: 14px; }
+
+/* ---------- Selettore lingua ---------- */
+.lang-switch {
+  position: absolute; z-index: 2;
+  top: calc(env(safe-area-inset-top) + 16px); right: var(--gutter);
+  display: flex; gap: 2px; padding: 3px;
+  border: 1px solid rgb(243 239 231 / .2); border-radius: 999px;
+  background: rgb(11 31 36 / .4);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+.lang-switch a {
+  min-width: 40px; min-height: 32px; padding: 0 10px;
+  display: grid; place-items: center; border-radius: 999px;
+  font: 600 12px/1 var(--sans); letter-spacing: .1em;
+  color: var(--hero-ink-soft); text-decoration: none;
+}
+.lang-switch a:hover { color: var(--hero-ink); }
+.lang-switch a[aria-current="page"] { background: var(--hero-accent); color: #062a27; }

@@ -6,12 +6,20 @@ Statica (HTML + CSS + JS puri), nessuna build: basta servire la cartella.
 ## Struttura
 
 ```
-index.html                 contenuti della pagina
+index.html                 pagina in italiano
+en/index.html              pagina in inglese (stessa struttura)
 assets/css/style.css       stile (tema chiaro/scuro automatico)
 assets/js/main.js          animazioni, elica DNA nella hero, copia/condividi
 assets/nunzia-rubino.vcf   vCard scaricata dal pulsante "Salva contatto"
 assets/img/                favicon e (in futuro) foto / immagine OG
 ```
+
+## Lingue
+
+La pagina italiana è alla radice, quella inglese in `en/`: ogni modifica ai
+contenuti va fatta in entrambi i file. Chi apre il sito con il browser in una
+lingua diversa dall'italiano viene portato in automatico su `en/`; la scelta
+fatta con il selettore IT/EN viene ricordata e ha la precedenza.
 
 ## Anteprima locale
 
